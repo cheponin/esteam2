@@ -8,15 +8,6 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   
-  #lines for handling user login. 
-  #line for simple login form prompting to connect with facebook
-  get   '/login', :to => 'sessions#new', :as => :login
-  
-  #line to handle callback url. 
-  match '/auth/:provider/callback', :to => 'sessions#create'
-  
-  #if there is a problem
-  match '/auth/failure', :to => 'sessions#failure'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
